@@ -1,0 +1,11 @@
+vim.g.barbar_auto_setup = false -- disable auto-setup
+
+require('barbar').setup {
+  auto_hide = 1,
+  sidebar_filetypes = {
+    NvimTree = {
+      text = '',
+      align = 'right',
+    }
+  },
+}
