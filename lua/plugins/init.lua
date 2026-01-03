@@ -134,4 +134,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {}
   },
+  {
+    "eandrju/cellular-automaton.nvim",
+  },
 }

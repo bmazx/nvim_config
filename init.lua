@@ -9,3 +9,5 @@ require("config.whichkey")
 require("config.lualine")
 require("config.cmp")
 require("config.lspconfig")
+
+vim.cmd.colorscheme("noctishc")
