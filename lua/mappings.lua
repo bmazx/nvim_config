@@ -2,6 +2,10 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 
+map("n", ";", ":")
+map("n", "<CR>", "o<ESC>")
+map("n", "<S-CR>", "<S-o><ESC>")
+
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
@@ -41,11 +45,11 @@ map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "telescope find
 map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>ma", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
+map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
-map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
+map("n", "<leader>gm", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>", { desc = "telescope pick hidden term" })
 
 -- barbar
@@ -57,17 +61,6 @@ map('n', '<leader>b>', '<Cmd>BufferMoveNext<CR>', { desc = "buffer move next" })
 map('n', '<leader>bi', '<Cmd>BufferPin<CR>', { desc = "buffer pin" })
 map('n', '<leader>x', '<Cmd>BufferClose<CR>', { desc = "buffer close" })
 map('n', '<leader>bx', '<Cmd>BufferClose<CR>', { desc = "buffer close" })
-
--- Wipeout buffer
---                 :BufferWipeout
-
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
-
 map('n', '<leader>bp', '<Cmd>BufferPick<CR>', { desc = "buffer pick" })
 map('n', '<leader>bd', '<Cmd>BufferPickDelete<CR>', { desc = "buffer pick delete" })
 map('n', '<leader>bsn', '<Cmd>BufferOrderByBufferNumber<CR>', { desc = "buffer order by number" })
@@ -75,3 +68,14 @@ map('n', '<leader>bsa', '<Cmd>BufferOrderByName<CR>', { desc = "buffer order by 
 map('n', '<leader>bsd', '<Cmd>BufferOrderByDirectory<CR>', { desc = "buffer order by directory" })
 map('n', '<leader>bsl', '<Cmd>BufferOrderByLanguage<CR>', { desc = "buffer order by language" })
 map('n', '<leader>bsw', '<Cmd>BufferOrderByWindowNumber<CR>', { desc = "buffer order by window number" })
+
+-- Trouble
+map("n", "<leader>cx", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "diagnostics" })
+map("n", "<leader>cX", "<cmd>Trouble diagnostics toggle<cr>", { desc = "all diagnostics" })
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "lsp symbols" })
+map("n", "<leader>cd", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "lsp definitions/references" })
+map("n", "<leader>cl", "<cmd>Trouble loclist toggle<cr>", { desc = "location list" })
+map("n", "<leader>cq", "<cmd>Trouble qflist toggle<cr>", { desc = "quickfix list" })
+
+-- Plugin manager
+map('n', '<leader>L', '<cmd>Lazy<CR>', { desc = "open Lazy plugin manager" })

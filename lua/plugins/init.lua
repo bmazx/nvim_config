@@ -2,8 +2,11 @@ return {
   { "nvim-mini/mini.nvim", version = '*' },
   { "nvim-tree/nvim-web-devicons", opts = {} },
   { "lewis6991/gitsigns.nvim", },
-  { "iagorrr/noctishc.nvim" },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {
+    -- colorschemes
+    { "iagorrr/noctishc.nvim" },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  },
   {
     "nvim-telescope/telescope.nvim",
     version = "*",
@@ -55,5 +58,80 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
-  }
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    branch = "master",
+    lazy = false,
+    build = ':TSUpdate',
+  },
+  {
+    "mason-org/mason.nvim",
+    opts = {
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗"
+        }
+      }
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
+  },
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
+      'neovim/nvim-lspconfig',
+    }
+  },
+  {
+    {
+      "L3MON4D3/LuaSnip",
+      -- follow latest release.
+      version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    }
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {},
+    config = function(_, opts)
+      require("nvim-autopairs").setup(opts)
+
+      -- setup cmp for autopairs
+      local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+    end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
 }

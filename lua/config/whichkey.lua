@@ -3,4 +3,5 @@ wk.add({
   { "<leader>f", group = "find" },
   { "<leader>b", group = "buffers" },
   { "<leader>bs", group = "buffers sort" },
+  { "<leader>c", group = "trouble (lsp)" },
 })

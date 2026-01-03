@@ -1,4 +1,5 @@
 local o = vim.o
+local opt = vim.opt
 
 o.clipboard = "unnamedplus"
 o.cursorline = true
@@ -12,6 +13,7 @@ o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 o.laststatus = 3
+o.signcolumn = "yes"
 
 -- Indenting
 o.expandtab = true
@@ -29,3 +31,8 @@ o.numberwidth = 2
 o.showmatch = true
 o.ignorecase = true
 o.smartcase = true
+
+opt.undofile = true
+opt.undodir = vim.fn.stdpath("state") .. "/undo//"
+opt.undolevels = 10000
+opt.undoreload = 10000

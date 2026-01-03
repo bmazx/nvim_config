@@ -11,7 +11,7 @@ require('lualine').setup {
     ignore_focus = {},
     always_divide_middle = true,
     always_show_tabline = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
@@ -33,9 +33,9 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {'branch', 'diff'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding', 'filetype'},
+    lualine_x = {'diagnostics', 'encoding', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
