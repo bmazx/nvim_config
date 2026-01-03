@@ -9,5 +9,6 @@ require("config.whichkey")
 require("config.lualine")
 require("config.cmp")
 require("config.lspconfig")
+require("config.dapui")
 
 vim.cmd.colorscheme("noctishc")

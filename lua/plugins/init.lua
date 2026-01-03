@@ -135,6 +135,12 @@ return {
     opts = {}
   },
   {
+    "mfussenegger/nvim-dap",
+  },
+  {
+    "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+  },
+  {
     "eandrju/cellular-automaton.nvim",
   },
 }
