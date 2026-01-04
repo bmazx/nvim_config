@@ -141,6 +141,11 @@ return {
     "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
   },
   {
+    "ray-x/lsp_signature.nvim",
+    event = "InsertEnter",
+    opts = {},
+  },
+  {
     "eandrju/cellular-automaton.nvim",
   },
 }

@@ -8,6 +8,7 @@ require("config.barbar")
 require("config.whichkey")
 require("config.lualine")
 require("config.cmp")
+require("config.signature")
 require("config.lspconfig")
 require("config.dapui")
 
