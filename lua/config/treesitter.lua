@@ -1,12 +1,8 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "markdown", "markdown_inline" },
-  sync_install = false,
-  auto_install = true,
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '<filetype>' },
+  callback = function() vim.treesitter.start() end,
+})
 
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true
-  },
-}
+vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+require('nvim-treesitter').install { 'lua', 'c', 'cpp', 'html', 'css' }
