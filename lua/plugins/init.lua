@@ -6,6 +6,7 @@ return {
     -- colorschemes
     { "iagorrr/noctishc.nvim" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "Shatur/neovim-ayu" },
   },
   {
     "nvim-telescope/telescope.nvim",
